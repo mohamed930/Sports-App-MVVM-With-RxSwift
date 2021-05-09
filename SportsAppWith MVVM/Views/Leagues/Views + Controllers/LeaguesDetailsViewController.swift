@@ -23,6 +23,7 @@ class LeaguesDetailsViewController: UIViewController {
     let leaguesDetailsViewModel = LeaguesDetailsViewModel()
     let eventsViewModel = LastEventsViewModel()
     let teamsViewModel  = AllTeamsViewModel()
+    let coreDataViewModel = CoreDataViewModel()
     let disposeBag = DisposeBag()
     var PickedLeagueID = String()
     var PickedLeagueName = String()
@@ -44,6 +45,11 @@ class LeaguesDetailsViewController: UIViewController {
         subscribeToGetDataTeams()
         subscribeBackButton()
         touchsubscribeTeam()
+        
+        coreDataViewModel.PickedId.accept(self.PickedLeagueID)
+        coreDataViewModel.LoadLove()
+        subscribeToLoveStatus()
+        subscribeLoveButton()
         
     }
     
@@ -82,6 +88,15 @@ class LeaguesDetailsViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
     
+    func subscribeToLoveStatus() {
+        coreDataViewModel.AddingBehavior.subscribe(onNext: { (isLoved) in
+            if isLoved {
+                self.LoveButton.setBackgroundImage(UIImage(named: "heart_red"), for: .normal)
+            } else {
+                self.LoveButton.setBackgroundImage(UIImage(named: "BTNLove"), for: .normal)
+            }
+        }).disposed(by: disposeBag)
+    }
     
     func subscribeToResponse() {
         
@@ -160,6 +175,26 @@ class LeaguesDetailsViewController: UIViewController {
            .subscribe(onNext: { [weak self](_) in
                guard let self = self else { return }
                self.dismiss(animated: true)
+       }).disposed(by: disposeBag)
+    }
+    
+    func subscribeLoveButton() {
+        LoveButton.rx.tap
+           .throttle(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
+           .subscribe(onNext: { [weak self](_) in
+               guard let self = self else { return }
+            
+            if self.coreDataViewModel.AddingBehavior.value == true {
+                print("Entered here")
+                self.coreDataViewModel.DeleteData()
+            }
+            else {
+                let ob = CoreDataModel(leagueID: self.PickedLeagueID, leagueTitle: self.PickedLeagueName)
+                self.coreDataViewModel.coredataModel = ob
+                self.coreDataViewModel.SaveData()
+            }
+            
+               
        }).disposed(by: disposeBag)
     }
     

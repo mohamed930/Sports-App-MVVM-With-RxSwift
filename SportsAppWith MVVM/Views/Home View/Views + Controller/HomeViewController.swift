@@ -100,9 +100,6 @@ class HomeViewController: UIViewController {
                 
         }).disposed(by: disposeBag)
     }
-    
-    
-
 
 }
 

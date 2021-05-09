@@ -37,7 +37,7 @@
         <!--Favourtis-->
         <scene sceneID="e55-Dg-bo8">
             <objects>
-                <viewController id="0bP-F9-E3J" customClass="FavouriteViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0bP-F9-E3J" customClass="FavouritesViewController" customModule="SportsAppWith_MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pua-PD-zmj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,10 +66,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BeW-n9-ggy">
                                 <rect key="frame" x="0.0" y="91" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="0bP-F9-E3J" id="lpH-Vc-mrq"/>
-                                    <outlet property="delegate" destination="0bP-F9-E3J" id="65c-8b-anQ"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9cK-hD-lqU"/>

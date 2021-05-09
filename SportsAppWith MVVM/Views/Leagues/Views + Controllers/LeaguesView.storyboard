@@ -148,7 +148,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="sxo-FG-VBF"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vw-6U-oQb" customClass="CustomUILabel" customModule="Sports_App" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vw-6U-oQb" customClass="CustomUILabel" customModule="SportsAppWith_MVVM" customModuleProvider="target">
                                                 <rect key="frame" x="63" y="16.5" width="196" height="18"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="13"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -178,7 +178,7 @@
                                     <constraint firstItem="pFn-vo-iHJ" firstAttribute="leading" secondItem="ALe-nU-ptb" secondAttribute="trailing" constant="24.666666666666686" id="tqT-vB-laR"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SO-v7-DHb" customClass="CustomUILabel" customModule="Sports_App" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primmer league details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SO-v7-DHb" customClass="CustomUILabel" customModule="SportsAppWith_MVVM" customModuleProvider="target">
                                 <rect key="frame" x="8" y="97" width="390" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="OFr-aU-lGa"/>
